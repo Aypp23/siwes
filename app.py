@@ -42,7 +42,7 @@ if st.button("Check For Fraud"):
 
         input_data['cc_num'] = input_data['cc_num'].apply(lambda x:hash(x) % (10 ** 2))
         prediction = model.predict(input_data)[0]
-        result = "Fraudulant Transaction" if prediction == 1 else " Legitimate Transaction"
+        result = "Fraudulent Transaction" if prediction == 1 else " Legitimate Transaction"
         st.subheader(f"Prediction: {result}")
     else:
         st.error("Please Fill all required fields")
